@@ -48,17 +48,20 @@ class Pastoreio extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idPastor' => 'Id Pastor',
-            'idRebanho' => 'Id Rebanho',
-            'idExploracao' => 'Id Exploracao',
+            'idPastor' => 'Pastor',
+            'idRebanho' => 'Rebanho',
+            'idExploracao' => 'Exploração',
             'data' => 'Data',
+            'relIdPastor' => 'Pastor',
+            'relIdRebanho' => 'Rebanho',
+            'relIdExploracao' => 'Exploração',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdExploracao0()
+    public function getRelIdExploracao()
     {
         return $this->hasOne(Exploracao::className(), ['marca' => 'idExploracao']);
     }
@@ -66,7 +69,7 @@ class Pastoreio extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdPastor0()
+    public function getRelIdPastor()
     {
         return $this->hasOne(Pessoa::className(), ['idPessoa' => 'idPastor']);
     }
@@ -74,7 +77,7 @@ class Pastoreio extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdRebanho0()
+    public function getRelIdRebanho()
     {
         return $this->hasOne(Rebanho::className(), ['idRebanho' => 'idRebanho']);
     }

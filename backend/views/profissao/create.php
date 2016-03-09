@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Profissao */
 
-$this->title = 'Create Profissao';
-$this->params['breadcrumbs'][] = ['label' => 'Profissaos', 'url' => ['index']];
+$this->title = 'Criar nova Profissão';
+$this->params['breadcrumbs'][] = ['label' => 'Profissões', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="profissao-create">

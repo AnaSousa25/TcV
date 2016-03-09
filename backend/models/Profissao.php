@@ -39,7 +39,7 @@ class Profissao extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idProfissao' => 'Id Profissao',
+            'idProfissao' => 'ID Profissão',
             'nome' => 'Nome',
         ];
     }

@@ -21,11 +21,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'idExploracao') ?>
 
-    <?= $form->field($model, 'data') ?>
+    <?= $form->field($model, 'data')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'dd/mm/yyyy']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton('Limpar', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -43,9 +43,11 @@ class Concelho extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idConcelho' => 'Id Concelho',
+            'idConcelho' => 'ID Concelho',
             'nome' => 'Nome',
-            'idDistrito' => 'Id Distrito',
+            'idDistrito' => 'Distrito',
+            'relIdDistrito' => 'Distrito',
+            'relIdDistrito.nome' => 'Distrito',
         ];
     }
 
@@ -60,7 +62,7 @@ class Concelho extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdDistrito0()
+    public function getRelIdDistrito()
     {
         return $this->hasOne(Distrito::className(), ['idDistrito' => 'idDistrito']);
     }

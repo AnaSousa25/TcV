@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Rebanho */
 
-$this->title = $model->idRebanho;
+$this->title = 'Rebanho: '.$model->designacao;
 $this->params['breadcrumbs'][] = ['label' => 'Rebanhos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->idRebanho], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->idRebanho], [
+        <?= Html::a('Atualizar', ['update', 'id' => $model->idRebanho], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Remover', ['delete', 'id' => $model->idRebanho], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tem a certeza que pretende remover este rebanho?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'idRebanho',
             'designacao',
-            'idNucleo',
+            'relIdNucleo.nome',
         ],
     ]) ?>
 

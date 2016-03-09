@@ -18,8 +18,8 @@ class ExploracaoSearch extends Exploracao
     public function rules()
     {
         return [
-            [['marca', 'nome'], 'safe'],
-            [['idDono'], 'integer'],
+            [['marca', 'nome', 'idDono'], 'safe'],
+          //  [['idDono'], 'integer'],
         ];
     }
 
@@ -42,7 +42,7 @@ class ExploracaoSearch extends Exploracao
     public function search($params)
     {
         $query = Exploracao::find();
-
+        $query->joinWith('relIdDono');
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -58,12 +58,13 @@ class ExploracaoSearch extends Exploracao
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'idDono' => $this->idDono,
-        ]);
+        //$query->andFilterWhere([
+        //    'idDono' => $this->idDono,
+        //]);
 
         $query->andFilterWhere(['like', 'marca', $this->marca])
-            ->andFilterWhere(['like', 'nome', $this->nome]);
+            ->andFilterWhere(['like', 'Exploracao.nome', $this->nome])
+            ->andFilterWhere(['like', 'Pessoa.nome', $this->idDono]);
 
         return $dataProvider;
     }

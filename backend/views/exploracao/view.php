@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model backend\models\Exploracao */
 
 $this->title = $model->marca;
-$this->params['breadcrumbs'][] = ['label' => 'Exploracaos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Explorações', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="exploracao-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->marca], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->marca], [
+        <?= Html::a('Atualizar', ['update', 'id' => $model->marca], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Remover', ['delete', 'id' => $model->marca], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tem a certeza que pretende remover esta exploração?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'marca',
             'nome',
-            'idDono',
+            'relIdDono.nome',
         ],
     ]) ?>
 

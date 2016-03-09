@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Exploracao */
 
-$this->title = 'Create Exploracao';
-$this->params['breadcrumbs'][] = ['label' => 'Exploracaos', 'url' => ['index']];
+$this->title = 'Criar nova Exploração';
+$this->params['breadcrumbs'][] = ['label' => 'Explorações', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="exploracao-create">

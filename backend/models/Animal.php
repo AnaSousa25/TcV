@@ -64,16 +64,16 @@ class Animal extends \yii\db\ActiveRecord
         return [
             'idAnimal' => 'Id Animal',
             'marcaAuricular' => 'Marca Auricular',
-            'genero' => 'Genero',
+            'genero' => 'Género',
             'cor' => 'Cor',
-            'dataNasc' => 'Data Nasc',
+            'dataNasc' => 'Data Nascimento',
             'dataMorte' => 'Data Morte',
-            'nrPai' => 'Nr Pai',
-            'nrMae' => 'Nr Mae',
-            'idRaca' => 'Id Raca',
-            'idEspecie' => 'Id Especie',
-            'idRebanho' => 'Id Rebanho',
-            'idNucleo' => 'Id Nucleo',
+            'nrPai' => 'Número Identificação Pai',
+            'nrMae' => 'Número Identificação Mãe',
+            'idRaca' => 'Raça',
+            'idEspecie' => 'Espécie',
+            'idRebanho' => 'Rebanho',
+            'idNucleo' => 'Núcleo',
         ];
     }
 

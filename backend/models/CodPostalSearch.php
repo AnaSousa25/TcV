@@ -18,8 +18,8 @@ class CodPostalSearch extends CodPostal
     public function rules()
     {
         return [
-            [['idCodPostal', 'idConcelho', 'idDistrito'], 'integer'],
-            [['codigo', 'localidade'], 'safe'],
+            [['idCodPostal'], 'integer'],
+            [['codigo', 'localidade', 'idConcelho', 'idDistrito'], 'safe'],
         ];
     }
 
@@ -42,6 +42,8 @@ class CodPostalSearch extends CodPostal
     public function search($params)
     {
         $query = CodPostal::find();
+        $query->joinWith('relIdConcelho');
+        $query->joinWith('relIdDistrito');
 
         // add conditions that should always apply here
 
@@ -60,12 +62,14 @@ class CodPostalSearch extends CodPostal
         // grid filtering conditions
         $query->andFilterWhere([
             'idCodPostal' => $this->idCodPostal,
-            'idConcelho' => $this->idConcelho,
-            'idDistrito' => $this->idDistrito,
+            //'idConcelho' => $this->idConcelho,
+            //'idDistrito' => $this->idDistrito,
         ]);
 
         $query->andFilterWhere(['like', 'codigo', $this->codigo])
-            ->andFilterWhere(['like', 'localidade', $this->localidade]);
+              ->andFilterWhere(['like', 'localidade', $this->localidade])
+              ->andFilterWhere(['like', 'Concelho.nome', $this->idConcelho])
+              ->andFilterWhere(['like', 'Distrito.nome', $this->idDistrito]);
 
         return $dataProvider;
     }

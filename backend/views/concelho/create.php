@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Concelho */
 
-$this->title = 'Create Concelho';
+$this->title = 'Criar novo Concelho';
 $this->params['breadcrumbs'][] = ['label' => 'Concelhos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

@@ -58,9 +58,9 @@ class DistritoSearch extends Distrito
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
+        /*$query->andFilterWhere([
             'idDistrito' => $this->idDistrito,
-        ]);
+        ]);*/
 
         $query->andFilterWhere(['like', 'nome', $this->nome]);
 

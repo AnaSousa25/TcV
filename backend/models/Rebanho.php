@@ -44,9 +44,10 @@ class Rebanho extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idRebanho' => 'Id Rebanho',
-            'designacao' => 'Designacao',
-            'idNucleo' => 'Id Nucleo',
+            'idRebanho' => 'ID Rebanho',
+            'designacao' => 'Designação',
+            'idNucleo' => 'Núcleo',
+            'relIdNucleo.nome' => 'Núcleo',
         ];
     }
 
@@ -69,7 +70,7 @@ class Rebanho extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdNucleo0()
+    public function getRelIdNucleo()
     {
         return $this->hasOne(Nucleo::className(), ['idNucleo' => 'idNucleo']);
     }

@@ -39,8 +39,8 @@ class Raca extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idRaca' => 'Id Raca',
-            'designacao' => 'Designacao',
+            'idRaca' => 'ID Raça',
+            'designacao' => 'Designação',
         ];
     }
 

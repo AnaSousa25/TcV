@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Pais */
 
-$this->title = $model->idPais;
-$this->params['breadcrumbs'][] = ['label' => 'Pais', 'url' => ['index']];
+$this->title = 'País: '.$model->nome;
+$this->params['breadcrumbs'][] = ['label' => 'Países', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pais-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->idPais], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->idPais], [
+        <?= Html::a('Atualizar', ['update', 'id' => $model->idPais], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Remover', ['delete', 'id' => $model->idPais], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tem a certeza que pretende remover este país?',
                 'method' => 'post',
             ],
         ]) ?>

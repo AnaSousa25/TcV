@@ -7,16 +7,16 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\CodPostalSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cod Postals';
+$this->title = 'Cód. Postais';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cod-postal-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Cod Postal', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Novo Código Postal', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,11 +24,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'idCodPostal',
+            //'idCodPostal',
             'codigo',
             'localidade',
-            'idConcelho',
-            'idDistrito',
+            [
+                'attribute' => 'idConcelho',
+                'value' => 'relIdConcelho.nome',
+            ],
+            [
+                'attribute' => 'idDistrito',
+                'value' => 'relIdDistrito.nome',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

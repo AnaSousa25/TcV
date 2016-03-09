@@ -1,7 +1,10 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
+
+use backend\models\Pessoa;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Exploracao */
@@ -16,10 +19,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'idDono')->textInput() ?>
+    <?= $form->field($model, 'idDono')->dropDownList( 
+            ArrayHelper::map(Pessoa::find()->where(['dono'=>'TRUE'])->all(), 'idPessoa', 'nome'), ['prompt' => 'Escolher Dono']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Criar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Concelho */
 
-$this->title = $model->idConcelho;
+$this->title = 'Concelho: '.$model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Concelhos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->idConcelho], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->idConcelho], [
+        <?= Html::a('Atualizar', ['update', 'id' => $model->idConcelho], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Remover', ['delete', 'id' => $model->idConcelho], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tem a certeza que pretende remover este concelho?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'idConcelho',
             'nome',
-            'idDistrito',
+            'relIdDistrito.nome',
         ],
     ]) ?>
 

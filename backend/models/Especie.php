@@ -39,8 +39,8 @@ class Especie extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idEspecie' => 'Id Especie',
-            'designacao' => 'Designacao',
+            'idEspecie' => 'ID Espécie',
+            'designacao' => 'Designação',
         ];
     }
 

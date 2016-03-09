@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Especie */
 
-$this->title = 'Update Especie: ' . ' ' . $model->idEspecie;
-$this->params['breadcrumbs'][] = ['label' => 'Especies', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->idEspecie, 'url' => ['view', 'id' => $model->idEspecie]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Espécie: ' . $model->designacao;
+$this->params['breadcrumbs'][] = ['label' => 'Espécies', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = ['label' => $model->idEspecie, 'url' => ['view', 'id' => $model->idEspecie]];
+$this->params['breadcrumbs'][] = 'Atualizar: ' . $model->designacao;
 ?>
 <div class="especie-update">
 

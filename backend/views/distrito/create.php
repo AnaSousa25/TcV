@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Distrito */
 
-$this->title = 'Create Distrito';
+$this->title = 'Criar novo Distrito';
 $this->params['breadcrumbs'][] = ['label' => 'Distritos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

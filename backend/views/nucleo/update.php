@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Nucleo */
 
-$this->title = 'Update Nucleo: ' . ' ' . $model->idNucleo;
-$this->params['breadcrumbs'][] = ['label' => 'Nucleos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->idNucleo, 'url' => ['view', 'id' => $model->idNucleo]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Núcleo: ' . ' ' . $model->nome;
+$this->params['breadcrumbs'][] = ['label' => 'Núcleos', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = ['label' => $model->idNucleo, 'url' => ['view', 'id' => $model->idNucleo]];
+$this->params['breadcrumbs'][] = 'Atualizar: '. $model->nome;
 ?>
 <div class="nucleo-update">
 

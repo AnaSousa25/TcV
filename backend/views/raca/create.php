@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Raca */
 
-$this->title = 'Create Raca';
-$this->params['breadcrumbs'][] = ['label' => 'Racas', 'url' => ['index']];
+$this->title = 'Criar nova Raça';
+$this->params['breadcrumbs'][] = ['label' => 'Raças', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="raca-create">

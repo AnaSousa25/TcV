@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Raca */
 
-$this->title = 'Update Raca: ' . ' ' . $model->idRaca;
-$this->params['breadcrumbs'][] = ['label' => 'Racas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->idRaca, 'url' => ['view', 'id' => $model->idRaca]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Atualizar: ' . ' ' . $model->designacao;
+$this->params['breadcrumbs'][] = ['label' => 'Raças', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = ['label' => $model->idRaca, 'url' => ['view', 'id' => $model->idRaca]];
+$this->params['breadcrumbs'][] = 'Atualizar: '. $model->designacao;
 ?>
 <div class="raca-update">
 

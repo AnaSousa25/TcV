@@ -45,16 +45,17 @@ class Exploracao extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'marca' => 'Marca',
+            'marca' => 'Marca da Exploração',
             'nome' => 'Nome',
-            'idDono' => 'Id Dono',
+            'idDono' => 'Dono',
+            'relIdDono.nome' => 'Dono',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdDono0()
+    public function getRelIdDono()
     {
         return $this->hasOne(Pessoa::className(), ['idPessoa' => 'idDono']);
     }

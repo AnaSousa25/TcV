@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Pastoreio */
 
-$this->title = $model->idPastor;
-$this->params['breadcrumbs'][] = ['label' => 'Pastoreios', 'url' => ['index']];
+$this->title = 'Pastoreio: '.$model->data;
+$this->params['breadcrumbs'][] = ['label' => 'Pastoreio', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pastoreio-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'idPastor' => $model->idPastor, 'idRebanho' => $model->idRebanho, 'idExploracao' => $model->idExploracao], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'idPastor' => $model->idPastor, 'idRebanho' => $model->idRebanho, 'idExploracao' => $model->idExploracao], [
+        <?= Html::a('Atualizar', ['update', 'idPastor' => $model->idPastor, 'idRebanho' => $model->idRebanho, 'idExploracao' => $model->idExploracao], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Remover', ['delete', 'idPastor' => $model->idPastor, 'idRebanho' => $model->idRebanho, 'idExploracao' => $model->idExploracao], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tem a certeza que pretende remover este registo?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -28,9 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idPastor',
-            'idRebanho',
-            'idExploracao',
+            'relIdPastor.nome',
+            'relIdRebanho.designacao',
+            'relIdExploracao.nome',
             'data',
         ],
     ]) ?>

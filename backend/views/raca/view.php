@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Raca */
 
-$this->title = $model->idRaca;
-$this->params['breadcrumbs'][] = ['label' => 'Racas', 'url' => ['index']];
+$this->title = 'Raça: '.''.$model->designacao;
+$this->params['breadcrumbs'][] = ['label' => 'Raças', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="raca-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->idRaca], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->idRaca], [
+        <?= Html::a('Atualizar', ['update', 'id' => $model->idRaca], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Remover', ['delete', 'id' => $model->idRaca], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tem a certeza que deseja remover esta raça?',
                 'method' => 'post',
             ],
         ]) ?>

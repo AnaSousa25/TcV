@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Animal */
 
-$this->title = 'Create Animal';
-$this->params['breadcrumbs'][] = ['label' => 'Animals', 'url' => ['index']];
+$this->title = 'Inserir novo Animal';
+$this->params['breadcrumbs'][] = ['label' => 'Animais', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="animal-create">

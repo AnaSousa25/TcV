@@ -18,8 +18,8 @@ class RebanhoSearch extends Rebanho
     public function rules()
     {
         return [
-            [['idRebanho', 'idNucleo'], 'integer'],
-            [['designacao'], 'safe'],
+            [['idRebanho'], 'integer'],
+            [['designacao', 'idNucleo'], 'safe'],
         ];
     }
 
@@ -42,6 +42,7 @@ class RebanhoSearch extends Rebanho
     public function search($params)
     {
         $query = Rebanho::find();
+        $query->joinWith('relIdNucleo');
 
         // add conditions that should always apply here
 
@@ -60,10 +61,11 @@ class RebanhoSearch extends Rebanho
         // grid filtering conditions
         $query->andFilterWhere([
             'idRebanho' => $this->idRebanho,
-            'idNucleo' => $this->idNucleo,
+            //'idNucleo' => $this->idNucleo,
         ]);
 
-        $query->andFilterWhere(['like', 'designacao', $this->designacao]);
+        $query->andFilterWhere(['like', 'designacao', $this->designacao])
+              ->andFilterWhere(['like', 'Nucleo.nome', $this->idNucleo]);
 
         return $dataProvider;
     }

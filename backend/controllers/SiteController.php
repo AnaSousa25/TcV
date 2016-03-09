@@ -16,9 +16,10 @@ class SiteController extends Controller
      * @inheritdoc
      */
     public function behaviors()
-    {
+    {   
+        //Obligates to user authentication
         return [
-            'access' => [
+            /*'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
@@ -31,7 +32,7 @@ class SiteController extends Controller
                         'roles' => ['@'],
                     ],
                 ],
-            ],
+            ],*/
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

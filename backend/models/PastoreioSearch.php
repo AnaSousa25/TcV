@@ -18,8 +18,7 @@ class PastoreioSearch extends Pastoreio
     public function rules()
     {
         return [
-            [['idPastor', 'idRebanho'], 'integer'],
-            [['idExploracao', 'data'], 'safe'],
+            [['idPastor', 'idRebanho','idExploracao', 'data'], 'safe'],
         ];
     }
 
@@ -42,6 +41,9 @@ class PastoreioSearch extends Pastoreio
     public function search($params)
     {
         $query = Pastoreio::find();
+        $query->joinWith('relIdPastor');
+        $query->joinWith('relIdRebanho');
+        $query->joinWith('relIdExploracao');
 
         // add conditions that should always apply here
 
@@ -58,13 +60,16 @@ class PastoreioSearch extends Pastoreio
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
+        /*$query->andFilterWhere([
             'idPastor' => $this->idPastor,
             'idRebanho' => $this->idRebanho,
             'data' => $this->data,
         ]);
-
-        $query->andFilterWhere(['like', 'idExploracao', $this->idExploracao]);
+        */
+        $query->andFilterWhere(['like', 'Pessoa.nome', $this->idPastor])
+              ->andFilterWhere(['like', 'Rebanho.designacao', $this->idRebanho])
+              ->andFilterWhere(['like', 'Exploracao.nome', $this->idExploracao])
+              ->andFilterWhere(['like', 'data', $this->data]);
 
         return $dataProvider;
     }

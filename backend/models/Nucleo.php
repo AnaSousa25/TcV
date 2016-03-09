@@ -46,11 +46,11 @@ class Nucleo extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idNucleo' => 'Id Nucleo',
+            'idNucleo' => 'ID Núcleo',
             'nome' => 'Nome',
-            'parcelario' => 'Parcelario',
+            'parcelario' => 'Parcelário',
             'local' => 'Local',
-            'marcaExploracao' => 'Marca Exploracao',
+            'marcaExploracao' => 'Marca Exploração',
         ];
     }
 

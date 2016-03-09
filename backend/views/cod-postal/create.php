@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\CodPostal */
 
-$this->title = 'Create Cod Postal';
-$this->params['breadcrumbs'][] = ['label' => 'Cod Postals', 'url' => ['index']];
+$this->title = 'Criar novo Código Postal';
+$this->params['breadcrumbs'][] = ['label' => 'Cód. Postais', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cod-postal-create">

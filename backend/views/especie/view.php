@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Especie */
 
-$this->title = $model->idEspecie;
-$this->params['breadcrumbs'][] = ['label' => 'Especies', 'url' => ['index']];
+$this->title = 'Espécie: '.$model->designacao;
+$this->params['breadcrumbs'][] = ['label' => 'Espécies', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="especie-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->idEspecie], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->idEspecie], [
+        <?= Html::a('Atualizar', ['update', 'id' => $model->idEspecie], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Remover', ['delete', 'id' => $model->idEspecie], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tem a certeza que deseja remover esta espécie?',
                 'method' => 'post',
             ],
         ]) ?>

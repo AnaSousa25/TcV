@@ -18,8 +18,8 @@ class ConcelhoSearch extends Concelho
     public function rules()
     {
         return [
-            [['idConcelho', 'idDistrito'], 'integer'],
-            [['nome'], 'safe'],
+            [['idConcelho'], 'integer'],
+            [['nome', 'idDistrito'], 'safe'],
         ];
     }
 
@@ -42,6 +42,7 @@ class ConcelhoSearch extends Concelho
     public function search($params)
     {
         $query = Concelho::find();
+        $query->joinWith('relIdDistrito');
 
         // add conditions that should always apply here
 
@@ -60,10 +61,11 @@ class ConcelhoSearch extends Concelho
         // grid filtering conditions
         $query->andFilterWhere([
             'idConcelho' => $this->idConcelho,
-            'idDistrito' => $this->idDistrito,
+            //'idDistrito' => $this->idDistrito,
         ]);
 
-        $query->andFilterWhere(['like', 'nome', $this->nome]);
+        $query->andFilterWhere(['like', 'Concelho.nome', $this->nome])
+              ->andFilterWhere(['like', 'Distrito.nome', $this->idDistrito]);
 
         return $dataProvider;
     }

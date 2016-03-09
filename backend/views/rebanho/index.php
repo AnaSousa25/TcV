@@ -13,10 +13,10 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="rebanho-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Rebanho', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Novo Rebanho', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,9 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'idRebanho',
+            //'idRebanho',
             'designacao',
-            'idNucleo',
+            [
+                'attribute' => 'idNucleo',
+                'value' => 'relIdNucleo.nome',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

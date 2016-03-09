@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Pastoreio */
 
-$this->title = 'Create Pastoreio';
-$this->params['breadcrumbs'][] = ['label' => 'Pastoreios', 'url' => ['index']];
+$this->title = 'Criar novo Pastoreio';
+$this->params['breadcrumbs'][] = ['label' => 'Pastoreio', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pastoreio-create">

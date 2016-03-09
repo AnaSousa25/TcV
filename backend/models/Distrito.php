@@ -40,7 +40,7 @@ class Distrito extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idDistrito' => 'Id Distrito',
+            'idDistrito' => 'ID Distrito',
             'nome' => 'Nome',
         ];
     }

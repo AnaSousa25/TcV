@@ -47,18 +47,20 @@ class CodPostal extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idCodPostal' => 'Id Cod Postal',
-            'codigo' => 'Codigo',
+            'idCodPostal' => 'ID Cód. Postal',
+            'codigo' => 'Código Postal',
             'localidade' => 'Localidade',
-            'idConcelho' => 'Id Concelho',
-            'idDistrito' => 'Id Distrito',
+            'idConcelho' => 'Concelho',
+            'idDistrito' => 'Distrito',
+            'relIdConcelho.nome' => 'Concelho',
+            'relIdDistrito.nome' => 'Distrito',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdConcelho0()
+    public function getRelIdConcelho()
     {
         return $this->hasOne(Concelho::className(), ['idConcelho' => 'idConcelho']);
     }
@@ -66,7 +68,7 @@ class CodPostal extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdDistrito0()
+    public function getRelIdDistrito()
     {
         return $this->hasOne(Distrito::className(), ['idDistrito' => 'idDistrito']);
     }
